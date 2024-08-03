@@ -1,33 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+
+import {useState} from 'react'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+ 
+  // let counter = 5
+
+  // using useState hook to manage the state of counter
+  // this hook return an array with 2 argument ,
+  // one is the state/value and another one is the function that helps to change the value/state
+  let [counter, setCounter]= useState(10)
+
+
+  const addValue = () => {
+    // by simply increasing the counter value we are not able to upadate the value in our UI
+    // instead, we will update the value using the useState hook
+
+    if(counter>=20){
+      return
+    }
+    setCounter(counter+1)
+    // counter++
+    
+  }
+
+  const decValue = () => {
+    if (counter <= 0) {
+      return
+    }
+
+    setCounter(counter-1)
+    // counter--;
+ 
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Chai aur react</h1>
+      <h2>Counter value: {counter}</h2>
+
+      <button
+      onClick={addValue}
+      >Add value</button>
+
+      <br />
+
+      <button
+      onClick={decValue}
+      >Dec value</button>
+
     </>
   )
 }
