@@ -1,6 +1,8 @@
 function Adi(){
+    const name = 'Aditya'
     return (
-        <h1>Hello from Aditya!!</h1>
+        // we can only write evaluated JS expression in {}
+        <h1>Hello from {name}!!</h1>
     )
 }
 
