@@ -3,6 +3,10 @@ import {useState} from 'react'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+
+// Note: Batching concept
+// useState hook does not send the data one by one, it first stores all updates in the batches
+// then encounter it.
 function App() {
  
   // let counter = 5
