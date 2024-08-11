@@ -7,7 +7,7 @@ function App() {
  
   const [amount, setAmount]= useState(0)
   const [from, setFrom]= useState('usd')
-  const [to, fromTo]= useState('inr')
+  const [to, setTo]= useState('inr')
   const [convertedAmount, setConvertedAmount]= useState(0)
 
   // using our custom hook
